@@ -98,7 +98,7 @@
 			function gameLoop() 
 			{
 				
-				console.log("Time taken:" + new Date().getTime() - cTimer);
+				console.log("Time taken:" + (new Date().getTime() - cTimer));
 				cTimer = new Date().getTime();
 				// every 20 frames, make a new fish
 				if(counter++%20==0)	makeFish();	
