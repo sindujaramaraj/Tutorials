@@ -85,17 +85,21 @@
 			container.style.height = SCREEN_HEIGHT; 
 
 			document.body.appendChild(container); 
-			window.addEventListener("load", init); 
+			window.addEventListener("load", init);
+			
+			var cTimer = new Date().getTime();
 				
 			function init() {
 						
 				initMouseListeners(); 
-				setInterval(gameLoop, 1000/60); 
+				setInterval(gameLoop, 0); 
 			}
 			
 			function gameLoop() 
 			{
-
+				
+				console.log("Time taken:" + new Date().getTime() - cTimer);
+				cTimer = new Date().getTime();
 				// every 20 frames, make a new fish
 				if(counter++%20==0)	makeFish();	
 	
